@@ -1,0 +1,364 @@
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 20px 10px rgba(255, 255, 255, 1);
+  animation: float 8s ease-in-out infinite;
+  transition: transform 0.3s ease;
+  
+}
+.circle:hover {
+  animation-play-state: paused;
+  transform: translate(0, -20px) scale(1.1);
+}
+
+.circle.vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 50rem;
+  height: 50rem;
+  max-width: 1200px;
+  max-height: 800px;
+  border-radius: 50%;
+  transform: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+  0 8px 32px rgba(0, 0, 0, 0.1),
+  inset 0 1px 0 rgba(255, 255, 255, 0.5),
+  inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+  inset 0 0 30px 30px rgb(189, 189, 189);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.bubble-image {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20%;
+  height: 20%;
+  object-fit: cover;
+  opacity: 0.9;
+  transition: transform 0.3s ease;
+}
+.bubble-hide {
+  opacity: 0;
+}
+.background-black {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: radial-gradient(
+    circle 25rem at 50% 50%, /* Size matches half of vignette (50rem / 2) */
+    transparent 0%,
+    transparent 100%,
+    rgb(0, 0, 0) 100%
+  );
+  background-color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  pointer-events: none;
+}
+
+
+.bubble-tooltip {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  pointer-events: none;
+  font-size: 12px;
+}
+
+.tooltip-title {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.tooltip-meta {
+  opacity: 0.7;
+  font-size: 11px;
+}
+
+.metadata-overlay {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  z-index: 1001;
+
+}
+
+.metadata-overlay h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.metadata-overlay p {
+  font-size: 16px;
+  margin: 6px 0;
+}
+
+.description {
+  margin-top: 16px;
+  font-size: 14px;
+  opacity: 0.9;
+  max-width: 500px;
+}
+
+@keyframes float {
+  0%, 100% { translate: 0 0; }
+  25% { translate: 10px -15px; }
+  50% { translate: -8px -10px; }
+  75% { translate: 12px 5px; }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+
+.circle-0 {
+  position: absolute;
+  left: 4%;
+  bottom: 8rem;
+  width: 3rem;
+  height: 3rem;
+  animation-delay: 0s;
+}
+.circle-1 {
+  position: absolute;
+  left: 40%;
+  top: 4rem;
+  width: 100px;
+  height: 100px;
+  animation-delay: 1s;
+}
+.circle-2 {
+  position: absolute;
+  left: 48%;
+  top: 2rem;
+  width: 50px;
+  height: 50px;
+  animation-delay: 2s;
+}
+.circle-3 {
+  position: absolute;
+  left: 55%;
+  bottom: 10rem;
+  width: 50px;
+  height: 50px;
+  animation-delay: 4s;
+}
+.circle-4 {
+  position: absolute;
+  left: 60%;
+  bottom: 1rem;
+  width: 50px;
+  height: 50px;
+  animation-delay: 5s;
+}
+.circle-5 {
+  position: absolute;
+  right: 15%;
+  bottom: 50%;
+  width: 50px;
+  height: 50px;
+  animation-delay: 6s;
+}
+.circle-6 {
+  position: absolute;
+  right: 4%;
+  top: 8rem;
+  width: 75px;
+  height: 75px;
+  animation-delay: 7s;
+}
+.circle-7{
+  position: absolute;
+  right: 0%;
+  top: 6rem;
+  width: 75px;
+  height: 75px;
+  animation-delay: 8s;
+}
+
+
+
+/* Different positions and delays for each image */
+.float-1 {
+  top: 20%;
+  left: 30%;
+  animation-delay: 0s;
+}
+
+
+.backdrop-blur1 {
+  position: fixed;
+  inset: 0;
+  mix-blend-mode: luminosity;
+  background: radial-gradient(
+    circle 25rem at 50% 50%, /* Size matches half of vignette (50rem / 2) */
+    transparent 0%,
+    transparent 100%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: 999;
+  cursor: pointer;
+}
+.image-info {
+  gap: 20px;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  animation: float 10s ease-in-out infinite;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 
+  0 8px 32px rgba(0, 0, 0, 0.1),
+  inset 0 5px 0 rgba(255, 255, 255, 0.5),
+  inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+  inset 0 0 50px 40px rgba(255, 255, 255, 1);
+}
+
+.img-zoomed {
+  width: 40%;
+  height: 40%;
+  animation: wiggle 10s ease-in-out infinite;
+}
+
+
+.microscope-world {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  font-family: 'Caveat', cursive;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  text-align: center;
+}
+
+.vignette-image {
+  width: 20vw;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: transform 0.3s ease;
+  animation: wiggle 8s ease-in-out infinite;
+}
+
+.vignette-image:hover {
+  transform: scale(1.05);
+}
+
+.microscope-title {
+  color: #333;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin: 0;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+}
+
+
+.word-orbit-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.orbiting-word {
+  position: absolute;
+  font-family: 'Caveat', cursive;
+  font-size: var(--font-size);
+  color: #2a1f0e;
+  opacity: var(--word-opacity);
+  white-space: nowrap;
+  animation: orbit var(--orbit-duration) linear var(--orbit-delay) infinite;
+  transform-origin: center;
+  letter-spacing: 0.5px;
+}
+.orbiting-word:nth-child(1)  { animation-duration: 14s; animation-delay: -2s;  font-size: 12px; opacity: 0.5; --orbit-a: 160px; }
+.orbiting-word:nth-child(2)  { animation-duration: 19s; animation-delay: -7s;  font-size: 15px; opacity: 0.7; --orbit-a: 220px; }
+.orbiting-word:nth-child(3)  { animation-duration: 11s; animation-delay: -4s;  font-size: 11px; opacity: 0.4; --orbit-a: 190px; }
+.orbiting-word:nth-child(4)  { animation-duration: 23s; animation-delay: -11s; font-size: 14px; opacity: 0.6; --orbit-a: 240px; }
+.orbiting-word:nth-child(5)  { animation-duration: 16s; animation-delay: -9s;  font-size: 13px; opacity: 0.5; --orbit-a: 175px; }
+.orbiting-word:nth-child(6)  { animation-duration: 21s; animation-delay: -3s;  font-size: 16px; opacity: 0.7; --orbit-a: 210px; }
+.orbiting-word:nth-child(7)  { animation-duration: 13s; animation-delay: -6s;  font-size: 12px; opacity: 0.45; --orbit-a: 200px; }
+.orbiting-word:nth-child(8)  { animation-duration: 18s; animation-delay: -14s; font-size: 14px; opacity: 0.6; --orbit-a: 230px; }
+.orbiting-word:nth-child(9)  { animation-duration: 25s; animation-delay: -8s;  font-size: 11px; opacity: 0.4; --orbit-a: 185px; }
+
+
+@keyframes orbit {
+  0% {
+    transform: 
+      rotate(0deg) 
+      translateX(var(--orbit-a)) 
+      rotate(0deg)
+      rotate(var(--orbit-tilt));
+  }
+  100% {
+    transform: 
+      rotate(360deg) 
+      translateX(var(--orbit-a)) 
+      rotate(-360deg)
+      rotate(var(--orbit-tilt));
+  }
+}
