@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import {getImagePath} from './utils'
+import {getPath} from './utils'
 import Time, { TimeOfDay } from './components/Time'
 import Bubble from './components/Bubble'
 import './App.css'
@@ -21,54 +21,54 @@ function App() {
       date: "Spring 2026",
       type: "Cyanotype",
       description: "to the people we pass",
-      image: getImagePath("cutouts/1.png"),
+      image: getPath("cutouts/1.png"),
       words: ["years", "fragment", "memory", "nostalgia", "confusion", "preservation", "love", "tender", "found"],
-      audio: "/audio/radio.wav",
+      audio: getPath("audio/radio.wav"),
     },
     { 
       title: "board games", 
       date: "April 2026",
       type: "Cutout",
       description: "to the games we play",
-      image: getImagePath("cutouts/2.JPG"),
+      image: getPath("cutouts/2.JPG"),
       words: ["passing", "party", "fun", "friends", "frivolous", "chase", "avoid", "ride", "found"],
-      audio: "/audio/party.flac",
+      audio: getPath("audio/party.flac"),
     },
     { 
       title: "violin", 
       date: "April 2026",
       type: "Cutout",
       description: "to the things we forget",
-      image: getImagePath("cutouts/3.png"),
+      image: getPath("cutouts/3.png"),
       words: ["forget", "opportunity", "propserous", "opportunity", "potential", "regret", "cost", "sacrifice", "redemption"],
-      audio: "/audio/wood.wav",
+      audio: getPath("audio/wood.wav"),
     },
     { 
       title: "chopsticks", 
       date: "April 2026",
       type: "Cutout",
       description: "to what we hold dear to us",
-      image: getImagePath("cutouts/cutout4.png"),
+      image: getPath("cutouts/cutout4.png"),
       words: ["love", "mind", "bonds", "sacred", "family", "culture", "tradition", "practice", "study"],
-      audio: "/audio/bells.wav",
+      audio: getPath("audio/bells.wav"),
     },
     { 
       title: "duck", 
       date: "April 2026",
       type: "Cutout",
       description: "to the silly moments",
-      image: getImagePath("cutouts/5.png"),
+      image: getPath("cutouts/5.png"),
       words: ["freedom", "joy", "laughter", "ease", "warmth", "comfort", "#alive", "frivalous", "playful"],
-      audio: "/audio/duck.wav",
+      audio: getPath("audio/duck.wav"),
     },
     { 
       title: "shoebox", 
       date: "April 2026",
       type: "Cutout",
       description: "to the passions we have",
-      image: getImagePath("cutouts/6.png"),
+      image: getPath("cutouts/6.png"),
       words: ["passion", "art", "focus", "desire", "fervor", "pursuit", "meaning", "reward", "courage"],
-      audio: "/audio/fire.wav",
+      audio: getPath("audio/fire.wav"),
     },
   ];
 
